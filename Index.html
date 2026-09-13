@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Scan</title>
+
+<style>
+body {
+  background: #000;
+  color: #00ff66;
+  font-family: monospace;
+  text-align: center;
+  padding-top: 100px;
+}
+
+#scan {
+  font-size: 22px;
+}
+
+#result {
+  display: none;
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.name {
+  color: #00ff66;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="scan">
+  SYSTEM SCAN...<br><br>
+  Scanning... <span id="number">0</span>%
+</div>
+
+<div id="result">
+  ⚠️ YOUR PHONE IS HACKED!
+  <div class="name">Ara Fa . . T</div>
+</div>
+
+<script>
+let n = 0;
+
+let scan = setInterval(function() {
+  n++;
+  document.getElementById("number").innerText = n;
+
+  if (n >= 100) {
+    clearInterval(scan);
+
+    document.getElementById("scan").style.display = "none";
+    document.getElementById("result").style.display = "block";
+  }
+}, 40);
+</script>
+
+</body>
+</html>
